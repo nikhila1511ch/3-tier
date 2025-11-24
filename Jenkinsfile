@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    Environment{
+    environment{
       REPO_URL= "https://github.com/nikhila1511ch/3-tier.git"
       WORK_DIR='3-tier'
       BRANCH_NAME='main'
