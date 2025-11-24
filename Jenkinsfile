@@ -4,9 +4,9 @@ pipeline{
       REPO_URL= "https://github.com/nikhila1511ch/3-tier.git"
       WORK_DIR='3-tier'
       BRANCH_NAME='main'
-      DOCKER_REPO="nikhila1511/2-tier"
+      DOCKER_REPO="nikhila1511/3-tier"
       REPO_DIR='3-tier'
-      REPO_NAME='2-tier'
+      REPO_NAME='3-tier'
       DOCKER_USERNAME='nikhila1511'
       DOCKER_PASSWORD='Nikhila@1511'
       IMAGE_NAME ='node'
@@ -76,7 +76,7 @@ pipeline{
             }
         }
 
-                stage('pull from docker repo'){
+        stage('pull from docker repo'){
             steps{
                 script{
                     try{
