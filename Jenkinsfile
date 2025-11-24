@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    environment{
+    Environment{
       REPO_URL= "https://github.com/nikhila1511ch/3-tier.git"
       WORK_DIR='3-tier'
       BRANCH_NAME='main'
@@ -12,7 +12,7 @@ pipeline{
       IMAGE_NAME ='node'
       IMAGE_TAG='25-slim'
       TARGET_SERVER='65.2.147.206'
-          }
+    }
     stages {
         stage('Check & Pull') {
             steps {
@@ -41,7 +41,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        echo "Building Docker image: ${IMAGE_NAME} with tags ${IMAGE_TAG} and latest"
+                        echo "Building Docker image: ${IMAGE_NAME} with tags ${IMAGE_TAG}"
                         dir(REPO_DIR) {
                             sh """
                             docker build -t ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG} .
