@@ -42,7 +42,7 @@ pipeline{
                 script {
                     try {
                         echo "Building Docker image: ${IMAGE_NAME} with tags ${IMAGE_TAG}"
-                        dir(REPO_DIR) {
+                        dir("${WORK_DIR}/server") {
                             sh """
                             docker build -t ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG} .
 
