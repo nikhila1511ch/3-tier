@@ -44,7 +44,7 @@ pipeline{
                         echo "Building Docker image: ${IMAGE_NAME} with tags ${IMAGE_TAG} and latest"
                         dir(REPO_DIR) {
                             sh """
-                            docker build -t ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG} -t ${DOCKER_USERNAME}/${REPO_NAME}:latest .
+                            docker build -t ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG} .
 
                             """
                         }                        
