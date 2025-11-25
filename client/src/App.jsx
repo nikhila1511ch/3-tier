@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "https://fuzzy-space-couscous-wrj7wqqqpwpv3rgr-5000.app.github.dev/api/employees";
+// const API_URL = "https://fuzzy-space-couscous-wrj7wqqqpwpv3rgr-5000.app.github.dev/api/employees";
+const API_URL = "https://api.nikhilaapp.com/api/employees";
 
 function App() {
   const [employees, setEmployees] = useState([]);
