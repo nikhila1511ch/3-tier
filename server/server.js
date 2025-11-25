@@ -8,10 +8,15 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://fuzzy-space-couscous-wrj7wqqqpwpv3rgr-5173.app.github.dev",
+  origin: "https://www.nikhilaapp.com",
   methods: ["GET", "POST", "DELETE"],
   credentials: true
 }));
+// app.use(cors({
+//   origin: "https://fuzzy-space-couscous-wrj7wqqqpwpv3rgr-5173.app.github.dev",
+//   methods: ["GET", "POST", "DELETE"],
+//   credentials: true
+// }));
 
 app.use(express.json());
 
