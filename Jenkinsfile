@@ -11,7 +11,7 @@ pipeline{
       DOCKER_PASSWORD='Nikhila@1511'
       IMAGE_NAME ='node'
       IMAGE_TAG='25-slim'
-      TARGET_SERVER='65.2.147.206'
+      TARGET_SERVER='65.1.145.54'
     }
     stages {
         stage('Check & Pull') {
@@ -100,13 +100,11 @@ pipeline{
                     try{
                         echo "running image comtainer"
                         sh"""
-                        ssh -o StrictHostKeyChecking=no ubuntu@${TARGET_SERVER} '
                         docker stop image || true
                         docker rm image || true
                         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
                         docker pull ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG}
                         docker run -d -p 9000:5000 --name image ${DOCKER_USERNAME}/${REPO_NAME}:${IMAGE_TAG}
-                    '
                     """
                          env.DEPLOY_STATUS ='SUCCESS'
                     }catch(Exception e){
